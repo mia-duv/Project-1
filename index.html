@@ -8,8 +8,9 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="text-center" id="header" style="background-color: red; text-align: center; color: white;"><h1>We Got Game</h1></div> 
+        <style>body {background-image: url(https://cdn3.vectorstock.com/i/1000x1000/46/72/orange-basketball-pattern-vector-5264672.jpg)};
+            </style>
+            <div class="text-center" id="header" style="background-color: red; text-align: center; color: white;"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">We Got Game</h1></div> 
             <nav class="navbar navbar-light bg-light">
                     <a class="navbar-brand">Search your favorite team</a>
                     <form class="form-inline">
@@ -19,11 +20,11 @@
                   </nav>
                   
         </div>
-
+        <br>
         <div class="container-fluid">
             
             <div class="row">
-                <div class="col" id="column1" style="background-color: purple; color: yellow; text-align: left;">
+                <div class="col" id="column1" style="background-color:royalblue; text-align: left;">
                   <h1>Teams:</h1>
                   <br>
                   <div id="teamName"><h3>Lakers</h3></div>
@@ -33,11 +34,13 @@
                     <div class="col" style="background-color: red; text-align: left;">
                         <h1>More Info:</h1>
                         <br>
-                        <div><h3>Upcoming Games:</h3></div>
+                        <div><h3>Upcoming Games:</h3>
+                        <div id="UpGames"><h3>games</h3></div>
                         <br>
                         <div class="button" style="color:black; text-align: center;"><button type="button" class="btn btn-dark" id="ticketBtn">Tickets</button></div>
                     </div>
                 </div>
             </div>
-    </body>
+            <br>
+        
 </html>
