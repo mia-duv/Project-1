@@ -1,3 +1,18 @@
-body{
-    background-image: url(https://ak3.picdn.net/shutterstock/videos/1030194383/thumb/1.jpg);
+#column1{
+    filter: alpha(opacity=30);
+    opacity: 0.7;
+    text-emphasis-color: white;
+
 };
+.body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("assets/images/background.jpg");
+}
+div.table1{
+    border: 1px solid white;
+    margin: 10%;
+    opacity: 0.6;
+    filter: alpha(opacity=50);
+    border-radius: 25px;
+}
