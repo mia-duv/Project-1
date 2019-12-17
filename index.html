@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>We Got Game</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" src="style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div class="container-fluid">
-        <div class="text-center" id="header">
-            <h1>We Got Game</h1>
+    <head>
+        <meta charset="UTF-8">
+        <title>We Got Game</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" src="style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="text-center" id="header" style="background-color: red; text-align: center; color: white;"><h1>We Got Game</h1></div> 
+            <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand">Search your favorite team</a>
+                    <form class="form-inline">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchBtn">Search</button>
+                    </form>
+                  </nav>
+                  
         </div>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand">Search your favorite team</a>
@@ -29,19 +32,24 @@
 
     <div class="container-fluid">
 
-        <div class="row">
-            <div class="col" id="column1">
-                <h1>Teams:</h1>
-                <div id="selected-team"></div>
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class="col" id="column1" style="background-color: purple; color: yellow; text-align: left;">
+                  <h1>Teams:</h1>
+                  <br>
+                  <div id="teamName"><h3>Lakers</h3></div>
+                  <div id="teamStanding"><h4>11-5</h4></div>
+                  <div><img class="image-responsive" src="https://images.homedepot-static.com/productImages/ce8be48f-a86e-4b96-a365-d97d33cc02e3/svn/purple-applied-icon-wall-decals-nbop1401-64_1000.jpg" width="100" height="100"></div>
+                </div>
+                    <div class="col" style="background-color: red; text-align: left;">
+                        <h1>More Info:</h1>
+                        <br>
+                        <div><h3>Upcoming Games:</h3></div>
+                        <br>
+                        <div class="button" style="color:black; text-align: center;"><button type="button" class="btn btn-dark" id="ticketBtn">Tickets</button></div>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <h1>More Info:</h1>
-            </div>
-        </div>
-    </div>
-    <script src="javascript/app.js"></script>
-    </div>
-
-</body>
-
+    </body>
 </html>
