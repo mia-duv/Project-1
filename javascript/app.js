@@ -25,7 +25,7 @@ $.ajax(settings).done(function (response) {
 
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
-    $("#selected-team").empty();
+    $("#column1").empty();
 
   // Created filter to search teams by nick name and team id. 
     searchBarInput = $("#searchBar").val().trim();
@@ -52,7 +52,7 @@ $.ajax(settings).done(function (response) {
     var selectedTeamLogo = $("<img>").attr("src", selectedTeam.logo)
     var selectedTeamRecord = $("<h2>").text("Wins: " + selectedTeamStanding.win + " Loss: " + selectedTeamStanding.loss);
     selection.append(selectedTeamName, selectedTeamLogo, selectedTeamRecord);
-    $("#selected-team").append(selection);
+    $("#column1").append(selection);
   });
   });
     //  console.log(selectedTeamId);
@@ -71,3 +71,18 @@ $.ajax(settings).done(function (response) {
   }
 
 //Column 2 - Game Information 
+
+var games = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://api-nba-v1.p.rapidapi.com/games/seasonYear/2019",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "api-nba-v1.p.rapidapi.com",
+		"x-rapidapi-key": "32f3549c71mshfad8e66e3e3891dp11a5b4jsn37e2605ac94b"
+	}
+}
+
+$.ajax(games).then(function (response) {
+	console.log(response);
+});
