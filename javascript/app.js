@@ -14,30 +14,20 @@ var teams = [];
 var selectedTeamId;
 var selectedTeamStanding = {}
 var standings = [];
+
+//Getting Team information 
 $.ajax(settings).done(function (response) {
   console.log(response);
 
-
-
   teams = response.api.teams;
   console.log(teams);
-
-  // console.log(response.api.teams[0].nickname);
-  // for ( var i = 0; i < response.api.teams.length; i++) {
-  //   teamNickNames = response.api.teams[i].nickname;
-  //   // console.log(teamNickNames);
-
 
 
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
     $("#selected-team").empty();
 
-    //   var teamNickNames = [];
-    //   for ( var i = 0; i < response.api.teams.length; i++) {
-    //     teamNickNames = response.api.teams[i].nickname;
-    // console.log(teamNickNames);
-    // }
+  // Created filter to search teams by nick name and team id. 
     searchBarInput = $("#searchBar").val().trim();
     var selectedTeam = teams.filter(
       team => {
@@ -68,7 +58,7 @@ $.ajax(settings).done(function (response) {
     //  console.log(selectedTeamId);
 })
 
-  // Get game records 
+  // Get team records 
   var record = {
     "async": true,
     "crossDomain": true,
@@ -80,3 +70,4 @@ $.ajax(settings).done(function (response) {
     }
   }
 
+//Column 2 - Game Information 
