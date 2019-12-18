@@ -14,8 +14,9 @@ var teams = [];
 var selectedTeamId;
 var selectedTeamStanding = {};
 var standings = [];
-var games = [];
 var selectedGame = [];
+let currentDate = new Date
+// console.log(date.toISOString())
 
 //Getting Team information 
 $.ajax(settings).done(function (response) {
@@ -28,6 +29,7 @@ $.ajax(settings).done(function (response) {
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
     $(".table1").empty();
+    $("#column2").empty();
 
     // Created filter to search teams by nick name and team id. 
     searchBarInput = $("#searchBar").val().trim();
@@ -44,16 +46,22 @@ $.ajax(settings).done(function (response) {
       standings = response.api.standings;
       selectedTeamStanding = standings.filter(
         standing => {
-          return standing.teamId == selectedTeamId
+          return standing.teamId === selectedTeamId
         })[0];
       // console.log("ST Standing", selectedTeamStanding)
 
       $.ajax(games).then(function (response) {
     
-      for (var i = 0; i < response.api.games.length; i++) {
-        console.log(response.api.games[i].statusGame= "Scheduled");
+      // for (var i = 0; i < response.api.games.length; i++) {
+        // console.log(response.api.games[i]);
+        // .statusGame= "Scheduled"
+        console.log(response)
+        var myTeamsGames = response.api.games.filter(game => game.hTeam.teamId === selectedTeamId);
         
-      }      
+        var upcomingGames = myTeamsGames.filter(game => new Date(game.startTimeUTC) >= currentDate);
+        console.log(upcomingGames[0]);
+        
+      // }        
 
       // console.log("ST Standing WINS", selectedTeamStanding.win)
       var selection = $("<div>")
@@ -69,6 +77,10 @@ $.ajax(settings).done(function (response) {
     
 
       // Game info for column 2 
+      var currentGame = $("<h3>").text(upcomingGames[0].hTeam.fullName + " vs. " + upcomingGames[0].vTeam.fullName);
+      
+      var currentGameDate = $("<h3>").text(new Date(upcomingGames[0].startTimeUTC).toLocaleDateString() + " at " + new Date(upcomingGames[0].startTimeUTC).toLocaleTimeString())
+  $("#column2").append(currentGame, currentGameDate);
 
     });
   });
