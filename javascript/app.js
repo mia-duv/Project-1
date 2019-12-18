@@ -12,8 +12,10 @@ var settings = {
 var searchBarInput;
 var teams = [];
 var selectedTeamId;
-var selectedTeamStanding = {}
+var selectedTeamStanding = {};
 var standings = [];
+var games = [];
+var selectedGame = [];
 
 //Getting Team information 
 $.ajax(settings).done(function (response) {
@@ -46,6 +48,13 @@ $.ajax(settings).done(function (response) {
         })[0];
       // console.log("ST Standing", selectedTeamStanding)
 
+      $.ajax(games).then(function (response) {
+    
+      for (var i = 0; i < response.api.games.length; i++) {
+        console.log(response.api.games[i].statusGame= "Scheduled");
+        
+      }      
+
       // console.log("ST Standing WINS", selectedTeamStanding.win)
       var selection = $("<div>")
       var selectedTeamName = $("<h1>").text(selectedTeam.nickname)
@@ -57,7 +66,10 @@ $.ajax(settings).done(function (response) {
       selection.append(selectedTeamName, selectedTeamLogo, selectedTeamRecord);
       // console.log(selection);
       $(".table1").append(selection);
-      console.log(selectedTeam.logo);
+    
+
+      // Game info for column 2 
+
     });
   });
 
@@ -88,6 +100,6 @@ var games = {
   }
 }
 
-$.ajax(games).then(function (response) {
-  console.log(response);
+
+
 });
