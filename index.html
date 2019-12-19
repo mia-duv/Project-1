@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>We Got Game</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" src="style.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    </head>
-    <body>
-        <style> body {background-image: url("http://bestanimations.com/Sports/Basketball/epic-basketball-dunk-animated-gif-6.gif#.XfVLlA324Kk.link"); background-size: cover; background-repeat: no-repeat;} </style>
-            <div class="text-center" id="header" style="background-color:black; text-align: center; color: white;"></div> 
-            <nav class="navbar navbar-dark bg-dark" style="background-color: black;">
-                    <a class="navbar-brand" style="margin-left: 670px; font-size: 43px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> We Got Game </a>
-                    <form class="form-inline">
-                        <div class="button" style="color:black; text-align: center; margin-right: 139px;"><button type="button" class="btn btn-dark" id="ticketBtn">Tickets</button></div>
-                      <input class="form-control form-control-lg" type="search" placeholder="Search" aria-label="Search" id="searchBar" style="margin-right: 17px;">
-                      <button class="btn btn-outline-primary btn-lg" type="submit" id="searchBtn"> Search</button>
-                    </form>
-                  </nav>
-                  
-        </div>
-        <br>
-        <div class="container-fluid" class="max-width:400px;">
-            
-            <div class="row">
-                <div class="col"  id="column1" style="text-align: left; color: white; border: blueviolet;">
-                    <table class="table1" max-width="400px">
-                        <thead>
-                            <td> <h1>Teams</h1></td>
-                        </thead>
-                            <td>Team Stats</td>
-                        </tbody>
-                    </table>
-                
-                 </div>
-                 
-                    <div class="col" style="text-align: left; color: white;" id="column2" style="opacity: 0.3;">
-                        <h3>Team Info:</h3>
-                        <br>
-                        <div><h4>Upcoming Games:</h4>
-                        <div id="UpGames"><h3></h3></div>
-                        <br>
-                       
+<head>
+    <meta charset="UTF-8">
+    <title>We Got Game</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" src="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("http://bestanimations.com/Sports/Basketball/epic-basketball-dunk-animated-gif-6.gif#.XfVLlA324Kk.link");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <div class="text-center" id="header" style="background-color:black; text-align: center; color: white;"></div>
+    <nav class="navbar navbar-dark bg-dark" style="background-color: black;">
+        <a class="navbar-brand"
+            style="margin-left: 790px; font-size: 43px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            We Got Game </a>
+        <form class="form-inline">
+            <div class="button" style="color:black; text-align: center; margin-right: 39px;">
+                <a class="btn btn-dark btn-lg" role="button" href="https://seatgeek.com/nba-tickets" target="_blank"
+                    id="ticketBtn" aria-pressed="false" data-toggle="button" aria-autocomplete="off">Tickets</a></div>
+            <div class="button" style="color:black; text-align: center; margin-right: 39px;">
+                <a href="https://store.nba.com/" target="_blank"><button type="button" class="btn btn-dark"
+                        id="shopBtn">Shop</button></a></div>
+            <div class="button" style="color:black; text-align: center; margin-right: 39px;">
+                <a href="https://www.fubo.tv/lp/nba/?title=Watch%20NBA%20Games%20Online&utm_source=Search&utm_medium=Adwords&utm_term=League&utm_campaign=USA_Sports_Search_EN_GGL_League_Basketball_NBA&ftv_campaign=USA-SEM-Sports-Basketball-League-NBA&gclid=Cj0KCQiAuefvBRDXARIsAFEOQ9FLMWEkwFaB5lrhq2ZtwiccxQD_T3RkBWazsYGKu7XCEcQNQ5rgYQwaAi6-EALw_wcB"
+                    target="_blank"><button type="button" class="btn btn-dark" id="livegamesBtn">Live Games</button></a>
+            </div>
+            <input class="form-control form-control-lg" type="search" placeholder="Search" aria-label="Search"
+                id="searchBar" style="margin-right: 17px;">
+            <button class="btn btn-outline-primary btn-lg" type="submit" id="searchBtn"> Search</button>
+        </form>
+    </nav>
+    </div>
+    <br>
+    <div class="container-fluid" class="max-width:400px;">
+        <div class="row">
+            <div class="col" id="column1" style="text-align: left; color: white; border: blueviolet;">
+                <table class="table1" max-width="400px">
+                    <thead>
+                        <td>
+                            <h1>Teams</h1>
+                        </td>
+                    </thead>
+                    <td>Team Stats</td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="text-align: left; color: white;" id="column2" style="opacity: 0.3;">
+                <h3>Team Info:</h3>
+                <br>
+                <div>
+                    <h4>Upcoming Games:</h4>
+                    <div id="UpGames">
+                        <h3></h3>
                     </div>
+                    <br>
                 </div>
             </div>
-            <script type="text/javascript" src="javascript/app.js"></script>
-            <br>
-        
+        </div>
+        <script type="text/javascript" src="javascript/app.js"></script>
+        <br>
+        <div class="fixed-bottom text-center">
+            <footer>
+                <p>&copy; 2019 The Dream Team <a href="https://www.giphy.com">Giphy </a></p>
+            </footer>
+        </div>
 </html>
