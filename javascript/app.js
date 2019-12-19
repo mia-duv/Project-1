@@ -21,10 +21,7 @@ let currentDate = new Date
 //Getting Team information 
 $.ajax(settings).done(function (response) {
 
-
   teams = response.api.teams;
-
-
 
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
@@ -41,23 +38,14 @@ $.ajax(settings).done(function (response) {
     selectedTeamId = selectedTeam.teamId;
 
     $.ajax(record).then(function (response) {
-
-
       standings = response.api.standings;
       selectedTeamStanding = standings.filter(
         standing => {
           return standing.teamId === selectedTeamId
         })[0];
 
-
       $.ajax(games).then(function (response) {
-
-        // for (var i = 0; i < response.api.games.length; i++) {
-
-        // .statusGame= "Scheduled"
-
         var myTeamsGames = response.api.games.filter(game => game.hTeam.teamId === selectedTeamId);
-
         var upcomingGames = myTeamsGames.filter(game => new Date(game.startTimeUTC) >= currentDate);
 
         var selection = $("<div>")
@@ -70,14 +58,12 @@ $.ajax(settings).done(function (response) {
         selection.append(selectedTeamName, selectedTeamLogo, selectedTeamRecord);
         $(".table1").append(selection);
 
-
         // Game info for column 2 
         var currentGame = $("<h3>").text(upcomingGames[0].hTeam.fullName + " vs. " + upcomingGames[0].vTeam.fullName);
-        var currentGameDate = $("<h3>").text(new Date(upcomingGames[0].startTimeUTC).toLocaleDateString() + " at " + new Date(upcomingGames[0].startTimeUTC).toLocaleTimeString())
+        var currentGameDate = $("<h3>").text((new Date(upcomingGames[0].startTimeUTC).toLocaleDateString()) + " at " + new Date(upcomingGames[0].startTimeUTC).toLocaleTimeString())
         $("#column2").append(currentGame, currentGameDate);
       });
     });
-
   })
 
   // Get team records 
@@ -93,7 +79,6 @@ $.ajax(settings).done(function (response) {
   }
 
   //Column 2 - Game Information 
-
   var games = {
     "async": true,
     "crossDomain": true,
@@ -104,7 +89,4 @@ $.ajax(settings).done(function (response) {
       "x-rapidapi-key": "32f3549c71mshfad8e66e3e3891dp11a5b4jsn37e2605ac94b"
     }
   }
-
-
-
 });
